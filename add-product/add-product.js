@@ -21,11 +21,9 @@ button.addEventListener('click', (e) => {
         image: bakedGoodData.get('image')
     };
 
-    console.log(newBakedGood);
     bakedGoods.push(newBakedGood);
         
-    const stringyBakedGoods = JSON.stringify(bakedGoods);
-    localStorage.setItem('bakedGoods', stringyBakedGoods);
+    localStorage.setItem('bakedGoods', bakedGoods);
     
     const newRenderedBakedGood = renderBakedGoods(newBakedGood);
     newRenderedBakedGood.querySelector('button').remove();

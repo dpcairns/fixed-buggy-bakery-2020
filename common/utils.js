@@ -33,8 +33,7 @@ function seedProductsIntoLocalStorage(){
     const productsAlreadyExist = localStorage.getItem('bakedGoods');
 
     if (!productsAlreadyExist){
-        const stringyBakedGoods = JSON.stringify(bakedGoods);
-        localStorage.setItem('bakedGoods', stringyBakedGoods);
+        localStorage.setItem('bakedGoods', bakedGoods);
     }
 
 }

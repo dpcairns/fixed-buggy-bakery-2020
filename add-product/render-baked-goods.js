@@ -22,7 +22,7 @@ function renderBakedGoods(bakedGoods) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = bakedGoods.image;
+    img.src = bakedGoods.img;
     img.alt = bakedGoods.name + ' image';
     li.appendChild(img);
 
@@ -46,8 +46,8 @@ function renderBakedGoods(bakedGoods) {
                 id: bakedGoods.id,
                 quantity: 1
             };
-            cart.push(initialGood);
-        } else bakedGoodsInCart.quantity++;
+            cart.push();
+        } else bakedGoodsInCart.quantity = 3;
 
         const newCartState = JSON.stringify(cart);
         localStorage.setItem('cart', newCartState);
