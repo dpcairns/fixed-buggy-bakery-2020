@@ -33,7 +33,6 @@ button.addEventListener('click', (e) => {
 });
 for (let i = 0; i < bakedGoods.length; i++) {
     const bakedGood = bakedGoods[i];
-    const newRenderedBakedGood = renderBakedGoods(bakedGood);
     newRenderedBakedGood.querySelector('button').remove();
         
     list.appendChild(newRenderedBakedGood);

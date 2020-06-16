@@ -22,14 +22,14 @@ function renderBakedGoods(bakedGoods) {
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = bakedGoods.img;
+    img.src = bakedGoods.imageSource;
     img.alt = bakedGoods.name + ' image';
     li.appendChild(img);
 
     const p = document.createElement('p');
     p.className = 'price';
 
-    const usd = '$' + bakedGoods.price;
+    const usd = '$' + bakedGoods.cost;
     p.textContent = usd;
 
     const button = document.createElement('button');

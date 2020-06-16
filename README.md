@@ -7,10 +7,13 @@
 ## Products pages
 1) None of the products are showing up. Check the loop and see if we're accessing the products correctly
 1) Nothing hapens when you click on the add button. And even if it did, something seems weird about the handler
+1) The image and the cost seem to be broken
 
 ## Shopping cart
 1) The cart table seems to be rendering wrong. `localStorage` seems to say that the cart is `[Object object]`. Huh?
-1)
+1) the order button seems to be broken
+1) The table total is displaying incorrectly
+1) Individual totals are also displaying incorrectly
 
 ## Debugging starting points
 

@@ -19,7 +19,7 @@ function renderBakedGoods(lineItem, bakedGoods){
 
     const totalCell = document.createElement('td');
     const total = lineItem.quantity * bakedGoods.price;
-    totalCell.textContent = '$' + total;
+    totalCell.text = '$' + total;
     tr.appendChild(totalCell);
 
     return tr;

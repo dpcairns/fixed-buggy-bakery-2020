@@ -32,7 +32,7 @@ for (let i = 0; i < cart.length; i++){
 // OR cart.forEach(possiblyCartGood => {})
 
 
-const orderTotal = calcOrderTotal(cart, bakedGoods);
+const orderTotal = calcOrderTotal(bakedGoods, cart);
 //go through our cart and find each baked good id, calculate total by using item quantity and baked good price
 orderTotalCell.textContent = '$' + orderTotal;
 //update text of total cell
@@ -42,7 +42,7 @@ if (cart.length === 0){
     //if nothing in cart diabled order button
 }
 else {
-    orderButton.addEventListener('click', () => {
+    orderButton.addEventListener('submit', () => {
         clearCart(cart);
     });
 }
