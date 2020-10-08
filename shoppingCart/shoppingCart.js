@@ -1,7 +1,7 @@
 import renderBakedGoods from './render-line-items.js';
 // import cart from '../data/cart.js';
 // import bakedGoods from '../data/bakedGoods.js';
-import { calcOrderTotal, findById, getBakedGoods } from '../common/utils.js';
+import { calcOrderTotal, findById, getBakedGoods, renderCartIcon } from '../common/utils.js';
 import { clearCart, getCart } from './cart-api.js';
 
 
@@ -32,7 +32,7 @@ for (let i = 0; i < cart.length; i++){
 // OR cart.forEach(possiblyCartGood => {})
 
 
-const orderTotal = calcOrderTotal(bakedGoods, cart);
+const orderTotal = calcOrderTotal(cart, bakedGoods);
 //go through our cart and find each baked good id, calculate total by using item quantity and baked good price
 orderTotalCell.textContent = '$' + orderTotal;
 //update text of total cell
@@ -46,3 +46,5 @@ else {
         clearCart(cart);
     });
 }
+
+renderCartIcon();

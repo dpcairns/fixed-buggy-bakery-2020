@@ -1,5 +1,5 @@
-import { getBakedGoods } from '../common/utils.js';
-import renderBakedGoods from './render-baked-goods.js';
+import { getBakedGoods } from '../common/utils.js'; // must get the name right --- but you can have as many as you want per file
+import booger, { someNamedImport, anotherNamedImport } from './render-baked-goods.js'; // default import -- name of the import doesnt matter, but you only get one per file
 
 
 const bakedGoods = getBakedGoods();
@@ -25,7 +25,7 @@ button.addEventListener('click', (e) => {
         
     localStorage.setItem('bakedGoods', bakedGoods);
     
-    const newRenderedBakedGood = renderBakedGoods(newBakedGood);
+    const newRenderedBakedGood = booger(newBakedGood);
     newRenderedBakedGood.querySelector('button').remove();
     list.appendChild(newRenderedBakedGood);
 

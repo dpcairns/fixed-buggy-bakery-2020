@@ -1,4 +1,19 @@
 import bakedGoods from '../data/bakedGoods.js';
+import { getCart } from '../shoppingCart/cart-api.js';
+
+export function renderCartIcon() {
+    const cart = getCart();
+
+    let total = 0;
+
+    for (let item of cart) {
+        total = total + item.quantity;
+    }
+
+    const cartIcon = document.querySelector('#icon');
+
+    cartIcon.textContent = `Your cart has ${total} items`;
+}
 
 export function findById(bakedGoods, someId){
     for (let i = 0; i < bakedGoods.length; i++){
@@ -33,7 +48,7 @@ function seedProductsIntoLocalStorage(){
     const productsAlreadyExist = localStorage.getItem('bakedGoods');
 
     if (!productsAlreadyExist){
-        localStorage.setItem('bakedGoods', bakedGoods);
+        localStorage.setItem('bakedGoods', JSON.stringify(bakedGoods));
     }
 
 }

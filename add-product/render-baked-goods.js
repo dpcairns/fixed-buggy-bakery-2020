@@ -1,5 +1,4 @@
-import { findById } from '../common/utils.js';
-
+import { calcLineItem, findById, renderCartIcon } from '../common/utils.js';
 
 const makeCart = () => {
     const possibleCart = localStorage.getItem('cart');
@@ -18,11 +17,11 @@ function renderBakedGoods(bakedGoods) {
     li.title = bakedGoods.description;
 
     const h3 = document.createElement('h3');
-    h3.textContent - bakedGoods.name;
+    h3.textContent = bakedGoods.name;
     li.appendChild(h3);
 
     const img = document.createElement('img');
-    img.src = bakedGoods.imageSource;
+    img.src = bakedGoods.img;
     img.alt = bakedGoods.name + ' image';
     li.appendChild(img);
 
@@ -46,11 +45,13 @@ function renderBakedGoods(bakedGoods) {
                 id: bakedGoods.id,
                 quantity: 1
             };
-            cart.push();
-        } else bakedGoodsInCart.quantity = 3;
+            cart.push(initialGood);
+        } else bakedGoodsInCart.quantity++;
 
         const newCartState = JSON.stringify(cart);
         localStorage.setItem('cart', newCartState);
+
+        renderCartIcon();
     });    
     p.appendChild(button);
     li.appendChild(p);

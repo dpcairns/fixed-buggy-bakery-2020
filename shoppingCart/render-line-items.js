@@ -1,3 +1,5 @@
+import { calcLineItem } from '../common/utils.js';
+
 function renderBakedGoods(lineItem, bakedGoods){
     const tr = document.createElement('tr');
 //create table row
@@ -19,8 +21,9 @@ function renderBakedGoods(lineItem, bakedGoods){
 
     const totalCell = document.createElement('td');
     const total = lineItem.quantity * bakedGoods.price;
-    totalCell.text = '$' + total;
+    totalCell.textContent = '$' + total;
     tr.appendChild(totalCell);
+
 
     return tr;
     //call the table row
